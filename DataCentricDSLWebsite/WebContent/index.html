@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DataCentricDSL</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .btn-trial {
+            background-color: #337ab7 !important;
+            color: #ffffff !important;
+            border: none !important;
+        }
+        .btn-trial:hover {
+            background-color: #286090 !important;
+            border: none !important;    
+        }
+        .glyphicon-large {
+            font-size: 20pt !important;
+            color: #337ab7 !important;
+        }
+    </style>
+</head>
+
+<body ng-app ng-controller="ManageController">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="index.html">DataCentricDSL <sup>BETA</sup></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-repeat="page in pages"><a ng-href="{{page.page_file}}">{{page.page_name}}</a></li>
+                    <li><a href="https://dirigibletrial.hanatrial.ondemand.com/dirigible-ide/ide/index.html" class="btn btn-default btn-lg btn-trial">TRY NOW <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('http://i.share.pho.to/0545def8_o.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h1>JVM Compatible</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://i.share.pho.to/f0aea414_o.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h1>Powerful Eclipse Editor</h1>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://i.share.pho.to/f87b6702_o.jpeg');"></div>
+                <div class="carousel-caption">
+                    <h1>Easy to Integrate into Existing Projects</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </div>
+
+    <div class="section">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <h2>Why you'll like our language:</h2>
+                    <ul>
+                        <li>Makes working with databases easy</li>
+                        <li>Runs on any Java Virtual Machine</li>
+                        <li>Includes powerful Eclipse editor with code completion and highlighting</li>
+                        <li>You can run scripts from any Java class and share variables with them</li>
+                        <li><strong>Free</strong> to Use</li>
+                        <li>Open Source: Use for any project, private or commercial!</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.section -->
+
+    <div class="container" ng-repeat="page in pages">
+
+        <div class="row well">
+            <div class="col-lg-1 col-md-1">
+                <span class="{{page.page_icon}} glyphicon-large" aria-hidden="true"></span>
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <h4>{{page.page_description}}</h4>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a class="btn btn-lg btn-primary pull-right" ng-href="{{page.page_file}}">{{page.page_name}} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    
+    <div class="container">
+
+        <div class="row well">
+            <div class="col-lg-1 col-md-1">
+                <span class="glyphicon glyphicon-play glyphicon-large" aria-hidden="true"></span>
+            </div>
+            <div class="col-lg-7 col-md-7">
+                <h4>Try the language in your browser</h4>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <a class="btn btn-lg btn-primary pull-right" href="trial.html">TRY NOW <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Some Company 2014-2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/modern-business.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular-resource.min.js"></script>
+    <script type="text/javascript">
+		function ManageController($scope, $http){
+
+			var url = '/dirigible/js/DataCentricDSLWebsite/pages.js';
+			
+			$http.get(url)
+			.success(function(data){
+				$scope.pages = data;
+			});
+		}
+	</script>
+
+</body>
+
+</html>

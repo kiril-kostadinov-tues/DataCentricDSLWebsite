@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Help | DataCentricDSL</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .btn-trial {
+            background-color: #337ab7 !important;
+            color: #ffffff !important;
+            border: none !important;
+        }
+        .btn-trial:hover {
+            background-color: #286090 !important;
+            border: none !important;    
+        }
+        .glyphicon-large {
+            font-size: 20pt !important;
+            color: #337ab7 !important;
+        }
+    </style>
+</head>
+
+<body ng-app ng-controller="ManageController">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="index.html">DataCentricDSL <sup>BETA</sup></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-repeat="page in pages"><a ng-href="{{page.page_file}}">{{page.page_name}}</a></li>
+                    <li><a href="https://dirigibletrial.hanatrial.ondemand.com/dirigible-ide/ide/index.html" class="btn btn-default btn-lg btn-trial">TRY NOW <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="help.html">Installing the Eclipse Plugin</a></li>
+                    <li><a href="basics.html">Language basics</a></li>
+                    <li><a href="query.html">Using query</a></li>
+                    <li><a href="#">Using print</a></li>
+                </ul>    
+            </div>
+            
+            <div class="col-sm-9 col-md-10 main">
+                <h2 class="page-header">Using print</h2>
+                <p>Printing to an output stream is accomplished using the keyword 'print'. You can change the output stream using the variable 'outputStream'.</p>
+                <p>You can print literals, variables or the result of expressions.</p>
+                <code>print ''Hello World!'';<br>a = ''Hello World!'';<br>print a;<br>print ''Hello '' + ''World!'';<br>print query ''SELECT * FROM Students'';</code>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Some Company 2014-2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/modern-business.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular-resource.min.js"></script>
+    <script type="text/javascript">
+		function ManageController($scope, $http){
+		    
+			var url = '/dirigible/js/DataCentricDSLWebsite/pages.js';
+			
+			$http.get(url)
+			.success(function(data){
+				$scope.pages = data;
+			});
+		}
+	</script>
+</body>
+
+</html>
